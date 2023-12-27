@@ -8,5 +8,3 @@ USER root
 RUN apt-get update && \
     apt-get install -y maven
 
-# Install Java using apt-get
-RUN apt-get install -y openjdk-11-jdk
