@@ -5,8 +5,7 @@ FROM jenkins/jenkins:lts
 USER root
 
 # Install Maven using yum
-RUN yum update -y && \
-    yum install -y maven
+RUN apt-get update && apt-get install -y Maven
 
 # Install Java using yum
 RUN amazon-linux-extras install -y java-openjdk11
