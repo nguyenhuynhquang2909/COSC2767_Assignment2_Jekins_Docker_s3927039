@@ -1,16 +1,16 @@
-FROM jenkins/jenkins:latest  
+# Start from the official Jenkins LTS image
+FROM jenkins/jenkins:lts
 
-USER root  # Switch to root user to install packages
+# Switch to root user to install packages
+USER root
 
-# Install Maven
-RUN apt-get update && apt-get install -y maven
+# Update package lists and install Maven
+RUN apt-get update && \
+    apt-get install -y maven
 
-# Install Java JDK 11
-RUN apt-get install -y openjdk-11-jdk
+# Install OpenJDK 11
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jdk
 
-# Set environment variables for Java JDK 11
+# Set JAVA_HOME environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
-ENV PATH $JAVA_HOME/bin:$PATH
-
-USER jenkins
-
