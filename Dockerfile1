@@ -4,10 +4,13 @@ FROM jenkins/jenkins:lts
 # Switch to root user to install packages
 USER root
 
-# Install Maven and Java JDK 11 using apt-get
+# Update package lists and install Maven
 RUN apt-get update && \
-    apt-get install -y maven && \
+    apt-get install -y maven
+
+# Install OpenJDK 11
+RUN apt-get update && \
     apt-get install -y openjdk-11-jdk
 
-# Optionally: Set JAVA_HOME environment variable
+# Set JAVA_HOME environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
