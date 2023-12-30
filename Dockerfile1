@@ -1,15 +1,20 @@
-# Start from the official Jenkins LTS image
+# Use the OpenJDK 11 image as the base
+FROM openjdk:11 as build
+
+# Install Maven using apt-get in the OpenJDK image
+RUN apt-get update && \
+    apt-get install -y maven
+
+# At this point, the 'build' stage has Maven and Java JDK 11 installed.
+# Now, start from the official Jenkins LTS image
 FROM jenkins/jenkins:lts
 
 # Switch to root user to install packages
 USER root
 
-# Install Maven using apt-get
-RUN apt-get update && \
-    apt-get install -y maven
-
-# Install OpenJDK 11 using apt-get
-RUN apt-get install -y openjdk-11-jdk
+# Copy Maven and JDK from the build stage into the Jenkins image
+COPY --from=build /usr/share/maven /usr/share/maven
+COPY --from=build /usr/lib/jvm/java-11-openjdk-amd64 /usr/lib/jvm/java-11-openjdk-amd64
 
 # Set JAVA_HOME environment variable
 ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64
