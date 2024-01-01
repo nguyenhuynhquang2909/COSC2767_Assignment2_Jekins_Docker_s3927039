@@ -36,7 +36,7 @@
       <br>
       <span class="badge badge-secondary">s3927039</span>
       <br>
-      <span class="badge badge-success">Information Technology</span>
+      <span class="badge badge-success">Information Technology, General IT</span>
       <br>
       <span class="badge badge-danger">Meditation, Listiening to Music</span>
       <br>
