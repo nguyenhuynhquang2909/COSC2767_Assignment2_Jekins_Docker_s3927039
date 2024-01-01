@@ -38,7 +38,7 @@
       <br>
       <span class="badge badge-success">Information Technology, General IT</span>
       <br>
-      <span class="badge badge-danger">Meditation, Listiening to Music</span>
+      <span class="badge badge-danger">Meditation, Listiening to Music, Gaming</span>
       <br>
       <span class="badge badge-warning">Java, JavaScript</span>
       <!-- You only need to change these information, ends here! -->
