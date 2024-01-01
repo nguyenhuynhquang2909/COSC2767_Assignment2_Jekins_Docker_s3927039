@@ -38,9 +38,9 @@
       <br>
       <span class="badge badge-success">Information Technology</span>
       <br>
-      <span class="badge badge-danger">Meditation</span>
+      <span class="badge badge-danger">Meditation, Listiening to Music</span>
       <br>
-      <span class="badge badge-warning">Java</span>
+      <span class="badge badge-warning">Java, JavaScript</span>
       <!-- You only need to change these information, ends here! -->
       
 
